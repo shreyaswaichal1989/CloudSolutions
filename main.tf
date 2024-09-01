@@ -6,7 +6,7 @@ resource "random_id" "random-vm-name" {
 
 resource "google_compute_instance" "vm-cloud-assesments" {
   #name="vm-cloud-assesments"
-  name=random_id.random-vm-name.hex
+  name="$cloud-solutions- $random_id.random-vm-name.hex"
   machine_type = "e2-medium"
   zone="us-central1-a"
 
