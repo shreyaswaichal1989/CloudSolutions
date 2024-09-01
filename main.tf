@@ -13,8 +13,8 @@ locals {
 
 
 resource "google_compute_instance" "vm-cloud-assesments" {
-  #name="vm-cloud-assesments"
-  name=local.vm-name
+  name="vm-cloud-assesments"
+  #name=local.vm-name
   machine_type = "e2-medium"
   zone="us-central1-a"
 
