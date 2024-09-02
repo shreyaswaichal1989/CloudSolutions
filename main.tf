@@ -1,4 +1,4 @@
-/*resource "google_compute_instance" "vm-cloud-assesments" {
+resource "google_compute_instance" "vm-cloud-assesments" {
   name="vm-cloud-assesments"
   machine_type = "e2-medium"
   zone="us-central1-a"
@@ -19,10 +19,10 @@
   }
 
 
-}*/
+}
 
   module "bucket" {
   source            = "D:\\CloudAnswers\\CloudSolutions\\modules\\bucket"
-  bucket_name       = "cloudsolutions-tf"
+  bucket_name       = "newcloudsolutions-tf"
   bucket_location   = "us-central1"
 }

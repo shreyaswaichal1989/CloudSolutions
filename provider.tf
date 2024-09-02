@@ -3,6 +3,7 @@ terraform {
   backend "gcs" {
     bucket  = "cloudsolutions-tf"
     prefix  = "terraform/state"
+    credentials = "VM-tf\\serviceaccount-keys.json"
   }
   required_providers {
     google = {
