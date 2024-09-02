@@ -22,7 +22,7 @@ resource "google_compute_instance" "vm-cloud-assesments" {
 }
 
   module "bucket" {
-  source            = "../modules/bucket"
+  source            = "./modules/bucket"
   bucket_name       = "newcloudsolutions-tf"
   bucket_location   = "us-central1"
 }
