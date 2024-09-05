@@ -3,13 +3,13 @@ pipeline {
 	
     environment {
         GOOGLE_APPLICATION_CREDENTIALS = credentials('cloudassessment-key')
-	GIT_TOKEN = credentials('git-token')
+	    GIT_TOKEN = credentials('git-token')
     }
 	
     stages {
         stage('Git Checkout') {
             steps {
-               git "https://${GIT_TOKEN}@github.com/shreyaswaichal1989/CloudAssessments.git"
+               git "https://${GIT_TOKEN}@github.com/shreyaswaichal1989/CloudSolutions.git"
             }
         }
         
