@@ -13,12 +13,7 @@ pipeline {
                
             }
         }
-                 stage('send start mail') {
-            steps {
-                script {
-                    bat 'emailext body: 'Build has been Started', subject: 'Build Started', to: 'shrejobsearch@gmail.com''
-                }
-            }
+
         }
         stage('Terraform Init') {
             steps {
@@ -50,13 +45,7 @@ pipeline {
                 }
             }
         }
-         stage('send mail') {
-            steps {
-                script {
-                    bat 'emailext body: 'Build has been Completed', subject: 'Build Complete', to: 'shrejobsearch@gmail.com''
-                }
-            }
-        }
+      
         
     }
 }
