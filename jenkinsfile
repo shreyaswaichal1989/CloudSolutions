@@ -3,20 +3,20 @@ pipeline {
 	
     environment {
         GOOGLE_APPLICATION_CREDENTIALS = credentials('cloudassessment-key')
-	GIT_TOKEN = credentials('git-token')
+	    GIT_TOKEN = credentials('git-token')
     }
 	
     stages {
         stage('Git Checkout') {
             steps {
-               git "https://${GIT_TOKEN}@github.com/shreyaswaichal1989/CloudAssessments.git"
+               git "https://${GIT_TOKEN}@github.com/shreyaswaichal1989/CloudSolutions.git"
             }
         }
         
         stage('Terraform Init') {
             steps {
                 script {
-                    sh 'terraform init -force-copy'
+                    bat 'terraform init'
                 }
             }
         }
@@ -24,7 +24,7 @@ pipeline {
         stage('Terraform Plan') {
             steps {
                 script {
-                    sh 'terraform plan -out=tfplan'
+                    bat 'terraform plan -out=tfplan'
                 }
             }
         }
@@ -38,7 +38,7 @@ pipeline {
         stage('Terraform Apply') {
             steps {
                 script {
-                    sh 'terraform apply tfplan'
+                    bat 'terraform apply tfplan'
                 }
             }
         }
