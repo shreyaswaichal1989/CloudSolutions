@@ -13,7 +13,7 @@ terraform {
 }
 
 provider "google" {
- project = "cloud-assessments-434307"
+ project = "cloudassignments-434711"
  region = "us-central1"
  zone  = "us-central1-a"
 //credentials = "serviceaccount-keys.json"
