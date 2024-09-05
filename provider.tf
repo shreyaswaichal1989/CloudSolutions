@@ -1,9 +1,9 @@
 terraform {
- /* backend "gcs" {
+  backend "gcs" {
     bucket = "cluster-bucket-statefile1"
     prefix = "terraform/state"
   //credentials = "serviceaccount-keys.json"
-  }*/
+  }
   required_providers {
     google = {
       source = "hashicorp/google"
