@@ -9,7 +9,8 @@ pipeline {
     stages {
         stage('Git Checkout') {
             steps {
-               git "https://${GIT_TOKEN}@github.com/shreyaswaichal1989/CloudAssessments.git"
+               git "https://${GIT_TOKEN}@github.com/shreyaswaichal1989/CloudSolutions.git"
+               
             }
         }
         
