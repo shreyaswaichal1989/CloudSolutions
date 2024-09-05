@@ -1,8 +1,8 @@
 terraform {
   backend "gcs" {
-    bucket = "cluster-bucket-state"
+    bucket = "cluster-bucket-statefile1"
     prefix = "terraform/state"
-  // credentials = "serviceaccount-keys.json"
+  credentials = "serviceaccount-keys.json"
   }
   required_providers {
     google = {
@@ -16,5 +16,5 @@ provider "google" {
  project = "cloud-assessments-434307"
  region = "us-central1"
  zone  = "us-central1-a"
-//credentials = "serviceaccount-keys.json"
+credentials = "serviceaccount-keys.json"
 }
