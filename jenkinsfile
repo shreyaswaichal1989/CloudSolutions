@@ -13,7 +13,13 @@ pipeline {
                
             }
         }
-        
+                 stage('send start mail') {
+            steps {
+                script {
+                    bat 'emailext body: 'Build has been Started', subject: 'Build Started', to: 'shrejobsearch@gmail.com''
+                }
+            }
+        }
         stage('Terraform Init') {
             steps {
                 script {
