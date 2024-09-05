@@ -9,17 +9,14 @@ pipeline {
     stages {
         stage('Git Checkout') {
             steps {
-               git "https://${GIT_TOKEN}@github.com/shreyaswaichal1989/CloudSolutions.git"
-               
+               git "https://${GIT_TOKEN}@github.com/shreyaswaichal1989/CloudAssessments.git"
             }
         }
-
-        }
+        
         stage('Terraform Init') {
             steps {
                 script {
-                    bat 'terraform init -reconfigure'
-                    
+                    sh 'terraform init'
                 }
             }
         }
@@ -27,7 +24,7 @@ pipeline {
         stage('Terraform Plan') {
             steps {
                 script {
-                    bat 'terraform plan -out=tfplan'
+                    sh 'terraform plan -out=tfplan'
                 }
             }
         }
@@ -41,11 +38,9 @@ pipeline {
         stage('Terraform Apply') {
             steps {
                 script {
-                    bat 'terraform apply tfplan'
+                    sh 'terraform apply tfplan'
                 }
             }
         }
-      
-        
     }
-
+}
