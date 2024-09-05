@@ -44,5 +44,13 @@ pipeline {
                 }
             }
         }
+         stage('send mail') {
+            steps {
+                script {
+                    bat 'emailext body: 'Build has been Completed', subject: 'Build Complete', to: 'shrejobsearch@gmail.com''
+                }
+            }
+        }
+        
     }
 }
